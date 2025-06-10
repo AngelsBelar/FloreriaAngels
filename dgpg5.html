@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carrusel de Flores - Florería Angels</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff0f5;
+      color: #5c3c58;
+      overflow-x: hidden;
+    }
+
+    /* Texto a los costados */
+    .side-text {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      font-weight: bold;
+      color: #d63384;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .side-text.left {
+      left: 10px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+
+    .side-text.right {
+      right: 10px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+
+    /* Contenedor principal */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #c94f7c;
+      margin-bottom: 30px;
+    }
+
+    /* Carrusel */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.4);
+      overflow: hidden;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: opacity 0.5s ease-in-out;
+      display: none;
+      user-select: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    /* Botones de navegación carrusel */
+    .carousel-buttons {
+      margin-top: 15px;
+    }
+
+    .carousel-buttons button {
+      background-color: #ff99cc;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .carousel-buttons button:hover {
+      background-color: #ff66a3;
+    }
+
+    /* Botones de navegación entre páginas */
+    .nav-buttons {
+      margin-top: 30px;
+    }
+
+    .nav-buttons button {
+      background-color: #d63384;
+      border: none;
+      color: white;
+      padding: 12px 20px;
+      margin: 5px;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #a52a63;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="side-text left">Florería Angels</div>
+  <div class="side-text right">Florería Angels</div>
+
+  <div class="container">
+    <h1>Carrusel de Flores Lindas</h1>
+
+    <div class="carousel">
+      <img src="flor.jpg" class="active" alt="Flor 1" />
+      <img src="flor2.jpg" alt="Flor 2" />
+      <img src="flor3.jpg" alt="Flor 3" />
+      <img src="flor4.jpg" alt="Flor 4" />
+      <img src="flor5.jpg" alt="Flor 5" />
+    </div>
+
+    <div class="carousel-buttons">
+      <button onclick="showSlide(0)">1</button>
+      <button onclick="showSlide(1)">2</button>
+      <button onclick="showSlide(2)">3</button>
+      <button onclick="showSlide(3)">4</button>
+      <button onclick="showSlide(4)">5</button>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="location.href='dgpg3.html'">Pedidos</button>
+     
+      <button onclick="location.href='dwpg22.html'">Carrusel</button>
+      <button onclick="location.href='dgpg4.html'">Referencias artisticas</button>
+      <button onclick="location.href='index.html'">Catalogo</button>
+    </div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.carousel img');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = index;
+      slides[currentIndex].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

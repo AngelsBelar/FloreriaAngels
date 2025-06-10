@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedidos</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #444;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px;
+      color: #d63384;
+    }
+    .formulario {
+      max-width: 500px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ffcce0;
+      border-radius: 10px;
+      background-color: #fff8fb;
+      resize: vertical;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #ff99cc;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #ff66a3;
+    }
+    .confirmacion {
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pedidos</h1>
+
+  <div class="formulario">
+    <form id="pedidoForm">
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="flores">Tipo de flores:</label>
+      <select id="flores" name="flores" required>
+        <option value="">--Selecciona una opción--</option>
+        <option value="rosas">Rosas</option>
+        <option value="girasoles">Girasoles</option>
+        <option value="tulipanes">Tulipanes</option>
+        <option value="lirios">Lirios</option>
+        <option value="personalizado">Personalizado</option>
+      </select>
+
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" name="cantidad" min="1" required>
+
+      <label for="fecha">Fecha de entrega:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="mensaje">Dedicatoria o comentarios:</label>
+      <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+
+      <button type="submit">Enviar pedido</button>
+    </form>
+
+    <div class="confirmacion" id="confirmacionMensaje" style="display:none;">
+      ¡Tu pedido ha sido registrado con éxito! 🌸
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("pedidoForm");
+    const confirmacion = document.getElementById("confirmacionMensaje");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Evita que la página se recargue
+      confirmacion.style.display = "block"; // Muestra el mensaje
+      form.reset(); // Limpia el formulario
+    });
+  </script>
+</body>
+</html>

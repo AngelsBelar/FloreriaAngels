@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrusel</title>
+  <style>
+    body {
+      background-color: #ffe6f0;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    #titulo {
+      font-size: 2em;
+      color: #993366;
+      margin: 20px 0;
+    }
+
+    .carrusel-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .imagen-carrusel {
+      width: 90%;
+      max-width: 600px;
+      border: 4px solid #cc6699;
+      border-radius: 12px;
+      background-color: #fff0f5;
+      padding: 10px;
+    }
+
+    .imagen-carrusel img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .nav-button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #cc6699;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .nav-button:hover {
+      background-color: #b14e80;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="titulo">CATÁLOGO DE FLORES - Carrusel</h1>
+
+  <div class="carrusel-container">
+    <div class="imagen-carrusel">
+      <img src="flor.jpg" alt="Flor 1">
+    </div>
+    <div class="imagen-carrusel">
+      <img src="flor2.jpg" alt="Flor 2">
+    </div>
+    <div class="imagen-carrusel">
+      <img src="flor3.jpg" alt="Flor 3">
+    </div>
+  </div>
+
+  <a href="index.html" class="nav-button">← Regresar al Catálogo</a>
+
+</body>
+</html>
